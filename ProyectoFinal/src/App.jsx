@@ -1,28 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import CartPage from './pages/CartPage';
-import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
-import ProtectedRoute from './components/ProtectedRoute';
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { CartProvider } from './context/CartProvider'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Routes from './routes/Routes'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/producto/:id" element={<ProductDetailPage />} />
-        <Route path="/carrito" element={<CartPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/carrito" element={<ProtectedRoute ><CartPage/></ProtectedRoute>} />
-      </Routes>
-    </>
-  );
+    <CartProvider>
+      <BrowserRouter>
+        <Header />
+        <main className="container mt-4">
+          <Routes />
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
+  )
 }
 
-export default App;
-
-
+export default App
