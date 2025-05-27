@@ -25,9 +25,9 @@ function Footer() {
           <Col md={4}>
             <h5>Síguenos</h5>
             <ul className="list-unstyled">
-              <li>Facebook</li>
-              <li>Twitter</li>
-              <li>Instagram</li>
+              <li>Facebook:LaMejortienda</li>
+              <li>Twitter: LaMejortienda</li>
+              <li>Instagram:LaMejortienda</li>
             </ul>
           </Col>
         </Row>
