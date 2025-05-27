@@ -4,16 +4,22 @@ import { useEffect, useState } from 'react';
 
 export default function useFetchProducts(url) {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log("cargando productos")
     fetch(url)
       .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => setError(err))
-      .finally(() => setLoading(false));
-  }, [url]);
+      .then(data =>{
+        console.log(data)
+        setProducts(data)
+      })
+  .catch(err=>{
+    console.error("Error al cargar productos", err)
+      setError(true)
+  })
+  },[url])
+return { products,  error };
 
-  return { products, loading, error };
 }
+

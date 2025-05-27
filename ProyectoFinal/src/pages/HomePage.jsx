@@ -9,7 +9,7 @@ function HomePage() {
 
   if (loading) return <p>Cargando productos...</p>;
   if (error) return <p>Error al cargar productos</p>;
-
+console.log({products,loading,error})
   return (
     <div>
       <h2>Productos disponibles</h2>

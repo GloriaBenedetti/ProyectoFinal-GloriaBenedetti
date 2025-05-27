@@ -7,14 +7,16 @@ import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
 
 
-import Footer from'./componentes/Footer'
+import Footer from'./components/Footer'
 import ProtectedRoute from './components/ProtectedRoutes';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes>
+    
+
+      <Route>
+        <div>
+          <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/producto/:id" element={<ProductDetailPage />} />
         <Route path="/carrito" element={<ProtectedRoute><CartPage/></ProtectedRoute>
@@ -22,11 +24,12 @@ function App() {
         />
         <Route path="/login" element={<LoginPage />} />
        
-        <Route path="*" element={<NotFoundPage />} />
+        
         
       </Routes>
-      <Footer/>
-    </>
+     </div> 
+     </Route>
+    
   );
 }
 
