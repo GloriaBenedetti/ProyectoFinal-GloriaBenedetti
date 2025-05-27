@@ -18,8 +18,8 @@ function Footer() {
             <h5>Contacto</h5>
             <ul className="list-unstyled">
               <li>Email: contacto@tiendaonline.com</li>
-              <li>Teléfono: +34 123 456 789</li>
-              <li>Dirección: Calle Ejemplo 123</li>
+              <li>Teléfono: +54 11 456 789</li>
+              <li>Dirección: Calle Rivadavia 123</li>
             </ul>
           </Col>
           <Col md={4}>

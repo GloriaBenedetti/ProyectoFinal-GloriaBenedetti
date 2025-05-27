@@ -1,3 +1,6 @@
 
-import React from'react'
-export const CarContext= React.createContext()
+import React from 'react'
+import { useContext } from 'react'
+export const CartContext= React.createContext()
+export const useCart=()=>
+  useContext(CartContext)
