@@ -9,6 +9,9 @@ function ProductCard({ product }) {
   return (
     <div style={styles.card}>
       <h3>{product.title}</h3>
+      {/*Imagen del producto*/}
+     <img src={product.image} 
+     alt={product.title}width="150"/>
       <p>Precio: ${product.price}</p>
       <button onClick={() => addToCart(product)}>Agregar al carrito</button>
       <Link to={`/producto/${product.id}`}>Ver detalles</Link>
