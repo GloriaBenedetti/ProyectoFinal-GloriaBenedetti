@@ -15,6 +15,7 @@ import Dashboard from './pages/dashboard';
 
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import ProtectedRoute from './context/protectRoute';
 function App() {
   return (
   <div>
@@ -42,7 +43,7 @@ function App() {
             El componente ProductList se renderiza cuando el usuario accede a la ruta /productos.
             Este componente puede mostrar una lista de productos disponibles en la tienda.
           */}
-            <Route path='/cart' element={<Cart />} /> 
+            <Route path='/cart' element={<ProtectedRoute><Cart /></ProtectedRoute>} />
                     <Route path="/Crud" element={<CrudProductos />} />
         </Routes>
             </AuthProvider>   
